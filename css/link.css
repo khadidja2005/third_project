@@ -721,6 +721,91 @@ transition: var(--main-transition);
 
 
 /*ens team member section*/
+/*start services */
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+    background-color: var(--main-background-color);
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.services .box {
+    background-color: white;
+    box-shadow: 0 12px 20px rgb(0 0 0 / 13%), 0 2px 4px rgb(0 0 0 / 12%);
+    counter-increment: services;
+    transition: var(--main-transition);
+    position: relative;
+
+}
+.services .box::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--main-color);
+    left: 50%;
+    top: -3px;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+}
+.services .box:hover {
+    transform: translateY(-10px);
+}
+.services .box:hover::before{
+    width: 100%;
+}
+.services .box i  {
+    margin: 30px auto 20px;
+    display: block;
+    text-align: center;
+    color: #d5d5d5;
+}
+.services .box h3  {
+    text-align: center;
+    margin: 10px 0 40px;
+    font-size: 25px;
+    color: var(--main-color);
+}
+.services .box .info {
+    padding: 15px;
+    position: relative;
+    background-color: #f9f9f9;
+    text-align: right;
+}
+.services .box .info a {
+    color: var(--main-color);
+}
+.services .box .info::before {
+    content: '0' counter(services);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    background-color: var(--main-color);
+    height: 100%;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+.services .box .info::after {
+    content: '';
+    position: absolute;
+    background-color: #d5d5d5;
+    top: 0;
+    left: 80px;
+    width: 50px;
+    height: calc(100% + 0.4px);
+    transform: skewX(-30deg);
+}
+/*end services*/
 
 /*start animation*/
 @keyframes up-and-down {
